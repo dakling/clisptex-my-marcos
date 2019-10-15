@@ -11,10 +11,10 @@
 
 (defun tex-symmetry (name expression)
   (concatenate 'string    (if (stringp name)
-       (tex-cmd 'infGen (tex-cmd 'text name))
-     (tex-cmd 'infGen name))
-   " = "
-   expression))
+                              (tex-cmd "infGen" (tex-cmd 'text name))
+                              (tex-cmd "infGen" name))
+               " = "
+               expression))
 
 (defun tex-simple-symmetry (name diff-var &optional mult-var)
   (tex-symmetry name
